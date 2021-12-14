@@ -1,0 +1,15 @@
+#jdbc
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/fd_user?useUnicode=true&autoReconnect=true&failOverReadOnly=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#  security:
+#    user:
+#      name: admin
+#      password: admin
+#myBatis
+mybatis:
+  type-aliases-package: com.blog.bean
+  mapper-locations: classpath:mybatis/mapper/*.xml

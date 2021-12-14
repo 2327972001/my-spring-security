@@ -1,0 +1,24 @@
+<html xmlns:th="https://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<div th:text="${msg}"></div>
+<div th:utext="${msg}"></div>
+
+<hr>
+遍历：
+<ul>
+    <li th:each="s:${list}" th:text="${s}"></li>
+</ul>
+
+<hr>
+<a href="/user">用户页面</a>
+<a href="/admin">后台页面</a>
+<a href="/edit">编辑器页面</a>
+<a href="/update">更新操作</a>
+<a href="/logout" sec:authorize="isAuthenticated()">退出登录</a>
+</body>
+</html>
