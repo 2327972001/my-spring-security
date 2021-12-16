@@ -66,7 +66,8 @@ public class SecurityConfigTest extends WebSecurityConfigurerAdapter {
                     .anyRequest().authenticated()//其他地址的访问均需验证权限
                 .and()
                     //关闭csrf防护
-                    .csrf().disable();
+                    //.csrf().disable()
+        ;
 
         //记住我功能 默认有效期14天 设定rememberMe()的name为remember
         http.rememberMe().rememberMeParameter("remember");
