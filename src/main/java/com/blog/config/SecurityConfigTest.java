@@ -35,7 +35,7 @@ public class SecurityConfigTest extends WebSecurityConfigurerAdapter {
     public PersistentTokenRepository persistentTokenRepository(){
         JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
         jdbcTokenRepository.setDataSource(dataSource);
-        jdbcTokenRepository.setCreateTableOnStartup(true);//创建数据表
+        //jdbcTokenRepository.setCreateTableOnStartup(true);//创建数据表
         return jdbcTokenRepository;
     }
 
@@ -80,7 +80,8 @@ public class SecurityConfigTest extends WebSecurityConfigurerAdapter {
                     .antMatchers("/user/**").hasAnyAuthority("user","admin")//用户具有user、admin权限才能访问
                     .antMatchers("/edit/**").hasAnyAuthority("op","admin")//用户具有op、admin权限才能访问
                     .anyRequest().authenticated()//其他地址的访问均需验证权限
-                .and().rememberMe().tokenRepository(persistentTokenRepository()).rememberMeParameter("remember")//开启自动登录
+                .and()
+                    .rememberMe().tokenRepository(persistentTokenRepository()).rememberMeParameter("remember")//开启自动登录
                 .and()
                     //关闭csrf防护
                     //.csrf().disable()

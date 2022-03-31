@@ -7,10 +7,10 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @SpringBootApplication
 //开启注解
 @EnableGlobalMethodSecurity(securedEnabled = true,prePostEnabled = true)
-public class MySpringBootBlogApplication {
+public class MySpringSecurityApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MySpringBootBlogApplication.class, args);
+        SpringApplication.run(MySpringSecurityApplication.class, args);
         System.out.println("http://127.0.0.1:8080");
     }
 
